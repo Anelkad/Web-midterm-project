@@ -71,7 +71,7 @@
    
 }
 
-input{
+#right input{
     font-size: 15px;
     border: none;
     margin-left: 10px;
@@ -194,8 +194,6 @@ input{
     margin-right: 10px;
     margin-left: 5px;
 }
-
-
 
 .gray{
     color: rgb(100, 99, 99);
