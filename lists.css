@@ -11,8 +11,8 @@
 
 #main{
     display: inline-block;
-    margin-left: 22.3%;
-    width: 49.6%;
+    margin-left: 23%;
+    width: 48%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 }
 
@@ -34,7 +34,7 @@
     margin-left: 5%;
 }
 #newlist{
-    margin-left: 67%;
+    margin-left: 70%;
 }
 #more{
     margin-left: 2%;
@@ -58,7 +58,7 @@
 .follower-lists {
     display: block;
     font-size: 15px;
-    margin: 5px 30px 10px 6px;
+    margin: 5px 4px 10px 6px;
     padding: 10px 3px;
    
 }
