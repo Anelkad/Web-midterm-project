@@ -231,12 +231,57 @@
     white-space: nowrap;
 }
 
+.fixed-title{
+    position: fixed;
+    width: 47%;
+    top: 0;
+    padding-top: 10px;
+    z-index: 2;
+    background-color: white;
+    border-bottom: rgb(239, 243, 244) solid 1px;
+}
+
+.moving{
+    margin-top:17%;
+    z-index: 1;
+}
+#no-int-img{
+    margin-left: 20%;
+    margin-top:5%;
+}
+
+#no-int{
+    font-size: 31px;
+    width: 57%;
+    font-weight: 790;
+    margin-left: 20%;
+    color: rgb(15, 20, 25);
+    line-height: 36px;
+}
+
+#no-int-descr{
+    margin-left: 20%;
+    width: 57%;
+    color: rgb(83, 100, 113);
+    font-size: 15px;
+    margin-top: -3%;
+}
+
+.show{
+    padding: 14px 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.show:hover{
+    background-color: rgb(248, 248, 248);
+}
 
 .topic-part{
     display: inline-block;
     width: 29%;
     font-size: 15px;
-    padding: 16px 10px;
+    padding: 10px 10px 0px 10px;
     text-align: center;
 }
 
@@ -250,8 +295,37 @@
     background-color: rgb(222, 222, 222);
 }
 
+.view-all{
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+.view-all:hover{
+    background-color: rgb(248, 248, 248);
+}
+
+.category-item{
+    display: inline-block;
+    background-color:rgb(1, 152, 240);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 32%;
+    margin-bottom: 5px;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 40px 0px;
+    cursor: pointer;
+}
+
+.category-item:hover{
+    background-color:rgb(0, 135, 214);
+}
+
 #topics-descr{
-    border-top: rgb(239, 243, 244) solid 1px;
     padding: 20px 5px;
     color: rgb(95, 95, 95);
     font-size: 15px;
