@@ -80,6 +80,7 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    transition: 0.15s;
 }
 
 .tweet:hover, .buttons:hover{
@@ -152,6 +153,7 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    transition: 0.15s;
 }
 
 #right{
