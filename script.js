@@ -8,7 +8,6 @@ addButton.addEventListener('click', function () {
     if (addTweet == "")
         return;
 
-
     const userAva = document.createElement('img');
     userAva.className = 'content-ava';
     userAva.src = 'https://cdn-icons-png.flaticon.com/512/456/456212.png';

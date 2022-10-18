@@ -1,0 +1,171 @@
+#menu{
+    display: inline-block;
+    float: left;
+    padding-left: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 20%;
+    border-right: rgb(239, 243, 244) solid 1px;
+    padding-right: 15px;
+    position: fixed;
+}
+
+
+.menu-item{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    font-size: 20px;
+    padding: 5px 0px 5px 5px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.menu-item a{
+    display: block;
+    text-decoration: none;
+    color:black;
+}
+
+.menu-item:hover{
+    background-color: rgb(222, 222, 222);
+}
+
+.icons{
+    height: 28px;
+    float: left;
+    margin-right: 20px;
+}
+
+.logo{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 10px 7px 5px 7px;
+    margin-right: 100%;
+    margin-bottom: 20px;
+}
+
+.logo:hover{
+    background-color: rgb(223, 240, 251);
+}
+
+.user {
+    display: block;
+    border-radius: 30px;
+    margin-left: 5px;
+    font-size: 16px;
+    margin: 50% 0px 10px 0px;
+    padding: 10px 3px;
+   
+}
+
+.user:hover{
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+
+.user img{
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.tweet{
+    background-color: rgb(0, 172, 238);
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    width: 85%;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.tweet:hover, .buttons:hover{
+    background-color: rgb(0, 134, 186);
+}
+
+#main{
+    display: inline-block;
+    margin-left: 23%;
+    width: 30%;
+    border-right: rgb(239, 243, 244) solid 1px;
+}
+
+#main-header{
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    margin-top: -5%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+#settings{
+    margin-left: 50%;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px 7px 5px 7px;
+    cursor: pointer;
+    margin-top: 0.5%;
+}
+#newmessage{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px 7px 5px 7px;
+    cursor: pointer;  
+     
+}
+#settings:hover, #newmessage:hover{
+    background-color: rgb(222, 222, 222);
+}
+#welcome-text{
+    font-size: 31px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    text-align: left;
+}
+#inbox-text{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    text-align: left;
+    font-size: 15px;
+    color: rgb(83, 100, 113);
+    margin-top: 2%;
+}
+#main-center{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: 5%;
+    width:72%;
+}
+
+.buttons{
+    background-color: rgb(0, 172, 238);
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    width: 85%;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+#right{
+    display: inline-block;
+    float: right;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    margin-right: 15%;
+    margin-left: 55%;
+    width: 22%;
+}
+#right-texts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

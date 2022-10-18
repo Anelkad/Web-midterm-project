@@ -1,78 +1,30 @@
-a{
-    text-decoration: none;
-    color: black;
-}
-a:hover{
-    text-decoration: underline;
-    color: black;
-}
-
-input{
-    outline: none;
-    border: solid;
-    border-color: white;
-}
-
 #menu{
     display: inline-block;
     float: left;
     padding-left: 15px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     width: 20%;
-    /* border-right: rgb(239, 243, 244) solid 1px; */
+    border-right: rgb(239, 243, 244) solid 1px;
     padding-right: 15px;
     position: fixed;
 }
 
 #main{
     display: inline-block;
-    margin-left: 24%;
-    width: 48%;
-}
-
-.main_header{
-    margin-left: 2%;
-    font-size: 16px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    margin-top: -3%;
-}
-.main-heaser-user{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    margin-left: 2%;
-    font-size: 13px;
-    color: rgb(83, 100, 113);
-    margin-top: -2.5%;
-}
-.main-center{
+    margin-left: 23%;
+    width: 47%;
+    padding-left: 10px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     
-}
-.main-center img{
-    margin-left: 29%;
-    margin-top: 5%;
-    height: 168px;
-    width: 336px;
-}
-.main-center h3{
-    font-size: 31px;
-    font-weight: 790;
-    margin-left: 31%;
-    color: rgb(15, 20, 25);
-    line-height: 36px;
-}
-.main-center p{
-    margin-left: 31%;
-    color: rgb(83, 100, 113);
-    font-size: 15px;
-    margin-top: -3%;
 }
 
 #right{
     display: inline-block;
     float: right;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    width: 24%;
+    width: 25%;
     margin-right: 15px;
+    border-left: rgb(239, 243, 244) solid 1px;
     padding-left: 30px;
 }
 
@@ -130,6 +82,8 @@ input{
     background-color: rgb(31, 31, 31);
 }
 
+
+
 .trends {
     background-color: rgba(242, 242, 242, 0.954);
     border-radius: 20px;
@@ -149,6 +103,10 @@ input{
 }
 
 .show-more{
+    color:rgb(0, 172, 238);
+}
+
+.blue{
     color:rgb(0, 172, 238);
 }
 
@@ -176,7 +134,7 @@ input{
     font-size: 16px;
     margin: 50% 0px 10px 0px;
     padding: 10px 3px;
-    transition: 0.2s;  
+    transition: 0.15s;
 }
 
 .user:hover{
@@ -195,6 +153,34 @@ input{
     border-radius: 20px;
     margin-top: 20px;
     padding: 1px 0px 15px 0px;
+}
+
+.follow-block{
+    margin-top: 20px;
+}
+
+.follower-item {
+    display: block;
+    margin-left: 5px;
+    font-size: 15px;
+    margin: 5px 0px 10px 0px;
+    padding: 10px 3px;
+    transition: 0.15s;
+}
+
+.follower-item b:hover{
+    text-decoration: underline;
+}
+
+.follower-item:hover{
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+.follower-item img{
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 5px;
 }
 
 .follower {
@@ -221,6 +207,10 @@ input{
     color: rgb(100, 99, 99);
     font-family: Arial;
     font-size: 13px;
+}
+
+.up{
+    font-size: 15px;
 }
 
 .menu-item{
@@ -266,194 +256,173 @@ input{
 .back{
     display: inline-block;
     border-radius: 50%;
-    padding: 10px 7px 5px 7px;
-    margin-right: 100%;
-    margin-bottom: 20px;
+    padding: 5px 7px 5px 7px;
     transition: 0.15s;
 }
 
+
 .back:hover{
-    background-color: rgb(223, 240, 251);
+    background-color: rgb(222, 222, 222);
 }
 
-.content-main{
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    margin-left: -10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    font-size: 14px;
-}
-
-#main-home{
-    text-align: left;
-    background-color: white;
-    border: rgb(239, 243, 244) solid 1px;
-}
-
-#home{
-    font-size: large;
-    font-weight: bold;
-    margin: 5px 10px 0 10px;
-    padding: 10px 10px 20px 5px;
-}
-
-#tweet-new{
-    display: inline-block;
-    background-color: rgb(0, 172, 238);
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 20px;
-    float: right;
-    width: 12%;
-    height: 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#tweet-new:hover{
-    background-color: rgb(0, 134, 186);
-}
-
-#everyone{
-    /* margin-left: 20px; */
-    display: inline-block;
-    float: left;
-    margin-top: 40px;
-}
-
-#everyone a{
-    border: rgb(191, 191, 191) solid 1px;
-    color: rgb(0, 172, 238);
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 0 15px 2px 10px;
-    font-weight: bold;
-}
-
-#ava{
-    padding: 10px 10px 10px 10px;
-    border-radius: 50%;
-    margin: 30px 0 0 15px;
-}
-
-#home-logos{
-    margin-left: 50px;
-}
-
-.home-logos{
-    height: 3%;
-    width: 3%;
-    padding: 10px 10px 10px 10px;
-    transition: 0.3s;
-    border-radius: 50%;
-}
-
-.home-logos:hover{
-    background-color: rgb(181, 223, 253);
-    border-radius: 50%;
-}
-
-#input-new{
-    margin-left: 70px;
-    margin-bottom: 30px;
-}
-
-.new{
-    height: 10%;
-    width: 98%;
-    background-color: white;
-}
-
-.topic{
-    float: left;
-    padding: 0 5px 5px 10px;
-    margin: 0;
-}
-
-.bottom-topic{
-    padding-bottom: 15px;
-}
-
-.topic-user{
+#topics{
+    font-size: 20px;
     font-weight: 700;
 }
 
-.topic-login{
-    font-weight: 100;
+
+.fixed-title{
+    position: fixed;
+    margin-left: -1.5%;
+    width: 48.48%;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    line-height: 1;
 }
 
-.topic-span{
-    margin-right: 350px;
-}
-
-.content-ava{
-    height: 7%;
-    width: 7%;
-    border-radius: 50%;
-    float: left;
+.fixed-title p{
+    display: inline-block;
     margin-left: 20px;
-    transition: 0.2s;
 }
 
-.content{
-    padding: 10px 5px 20px 5px;
-    border: rgb(239, 243, 244) solid 1px;
-    transition: 0.2s;
-    
+.moving{
+    margin-top:10%;
+    padding-left: 10px;
+    margin-left: -2%;
+    z-index: 1;
 }
 
-.content-image{
-    height: 25%;
-    width: 65%;
-    margin-left : 130px;
-    border-radius: 15px;
-    border: rgb(239, 243, 244) solid 1px;
+.moving p{
+    font-size: 20px;
 }
 
-.content:hover{
-    text-decoration: none;
+#follow-block{
+    margin: 15px 0;
+}
+
+#follow-block a{
     color: black;
-    background-color: rgb(236, 239, 240);
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+#follow-block a:hover{
+    text-decoration: underline;
+}
+
+#avatar{
+    width: 100px;
+    border-radius: 100px;
+    padding: 20px 20px;
+    margin-top: -13%;
+    margin-left: 5%;
+    background-color: white;
+
+}
+
+#avatar:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.show{
+    padding: 14px 0px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.show:hover{
+    background-color: rgb(248, 248, 248);
+}
+
+.topic-part{
+    display: inline-block;
+    width: 21%;
+    font-size: 15px;
+    padding: 10px 10px 0px 10px;
+    margin-left: 0;
+    text-align: center;
+    transition: 0.15s;
     cursor: pointer;
 }
-.content-logos{
-    height: 3%;
-    width: 3%;
-    padding: 10px 10px 10px 10px;
-    margin: 0 45px 0 45px;
-    transition: 0.3s;
-    border-radius: 50%;
+
+
+.topic-part:hover{
+    background-color: rgb(238, 238, 238);
 }
 
-.more-topic{
+.view-all{
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.15s;
+}
+
+.view-all:hover{
+    background-color: rgb(248, 248, 248);
+}
+
+.category-item{
+    display: inline-block;
+    background-color:rgb(1, 152, 240);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 32%;
+    margin-bottom: 5px;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 40px 0px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.category-item:hover{
+    background-color:rgb(0, 135, 214);
+}
+
+#gray-block{
+    background-color: rgb(222, 222, 222);
+    height: 200px;
+    width: 103.3%;
+    margin-left: -2%;
+
+}
+
+.title-topics{
+    display: inline;
+    font-size: 20px;
+}
+
+.topics-item{
     float: right;
-    display: inline-block;
-    margin: 0 10px 0 20px;
+    padding: 8px 12px;
+    margin: 15px 10px;
+    border:rgb(200, 200, 200) solid 1px;
+    border-radius: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    transition: 0.15s;
 }
 
-.logos{
-    margin-left: 80px;
-    /* height: 20%;
-    width: ; */
-    display: inline-block;
+.topics-item:hover{
+    background-color: rgb(222, 222, 222);
 }
 
-.content-logos:hover{
-    background-color: rgb(181, 223, 253);
-    border-radius: 50%;
+#more-topics{
+    padding: 20px 0px;
+    border-bottom: rgb(239, 243, 244) solid 1px;
+    cursor: pointer;
+    transition: 0.15s;
 }
 
-.like:hover{
-    background-color: rgb(255, 181, 181);
-    border-radius: 50%;
+#more-topics:hover{
+    background-color: rgb(248, 248, 248);
 }
 
-.repost:hover{
-    background-color: rgb(174, 251, 195);
-    border-radius: 50%;
-}
