@@ -82,6 +82,10 @@
     cursor: pointer;
 }
 
+.tweet:hover, .buttons:hover{
+    background-color: rgb(0, 134, 186);
+}
+
 #main{
     display: inline-block;
     margin-left: 23%;
