@@ -12,10 +12,45 @@
 #main{
     display: inline-block;
     margin-left: 23%;
-    width: 47%;
-    padding-left: 10px;
+    width: 48%;
+}
+
+.main_header{
+    margin-left: 2%;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    margin-top: -3%;
+}
+.main-heaser-user{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    margin-left: 2%;
+    font-size: 13px;
+    color: rgb(83, 100, 113);
+    margin-top: -2.5%;
+}
+.main-center{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     
+}
+.main-center img{
+    margin-left: 29%;
+    margin-top: 5%;
+    height: 168px;
+    width: 336px;
+}
+.main-center h3{
+    font-size: 31px;
+    font-weight: 790;
+    margin-left: 31%;
+    margin-right: -880%;
+    color: rgb(15, 20, 25);
+    line-height: 36px;
+}
+.main-center p{
+    margin-left: 31%;
+    color: rgb(83, 100, 113);
+    font-size: 15px;
+    margin-top: -3%;
 }
 
 #right{
@@ -48,18 +83,12 @@
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     font-size: 20px;
-    font-weight: bold;
     width: 85%;
     height: 50px;
     margin-top: 20px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-#tweet:hover{
-    background-color: rgb(0, 134, 186);
 }
 
 #follow{
@@ -75,7 +104,6 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 #follow:hover{
@@ -86,7 +114,7 @@
     background-color: rgba(242, 242, 242, 0.954);
     border-radius: 20px;
     margin-top: 20px;
-    padding: 1px 0px 15px 0;
+    padding: 1px 0px 15px 7px;
     line-height: 1.3;
 }
 
@@ -95,16 +123,12 @@
 }
 
 .trends-item {
+    margin-left: 5px;
     font-size: 14px;
-    padding: 0px 0px 10px 10px;
-    transition: 0.15s;
+    padding: 0px 0px 10px 0px;
 }
 
 .show-more{
-    color:rgb(0, 172, 238);
-}
-
-.blue{
     color:rgb(0, 172, 238);
 }
 
@@ -118,7 +142,6 @@
     margin-right: 20px;
     width: 20px;
     border-radius: 30%;
-    transition: 0.15s;
 }
 
 .trends-item img:hover{
@@ -132,7 +155,7 @@
     font-size: 16px;
     margin: 50% 0px 10px 0px;
     padding: 10px 3px;
-    transition: 0.15s;
+   
 }
 
 .user:hover{
@@ -150,7 +173,7 @@
     background-color: rgba(242, 242, 242, 0.954);
     border-radius: 20px;
     margin-top: 20px;
-    padding: 1px 0px 15px 0px;
+    padding: 1px 0px 15px 7px;
 }
 .follower {
     display: block;
@@ -158,7 +181,7 @@
     font-size: 16px;
     margin: 5px 0px 10px 0px;
     padding: 10px 3px;
-    transition: 0.15s;
+   
 }
 
 .follower:hover{
@@ -172,6 +195,12 @@
     margin-left: 5px;
 }
 
+.gray{
+    color: rgb(100, 99, 99);
+    font-family: Arial;
+    font-size: 13px;
+}
+
 .menu-item{
     display: inline-block;
     vertical-align: top;
@@ -180,7 +209,6 @@
     padding: 5px 0px 5px 5px;
     border-radius: 30px;
     margin-bottom: 10px;
-    transition: 0.15s;
 }
 
 .menu-item a{
@@ -205,7 +233,6 @@
     padding: 10px 7px 5px 7px;
     margin-right: 100%;
     margin-bottom: 20px;
-    transition: 0.2s;
 }
 
 .logo:hover{
@@ -215,89 +242,11 @@
 .back{
     display: inline-block;
     border-radius: 50%;
-    padding: 5px 7px 5px 7px;
+    padding: 10px 7px 5px 7px;
+    margin-right: 100%;
     margin-bottom: 20px;
-    transition: 0.15s;
 }
-
 
 .back:hover{
-    background-color: rgb(222, 222, 222);
-}
-
-#title{
-    font-size: 20px;
-    display: inline;
-    margin-left: 20px;
-}
-
-.title-part{
-    display: inline-block;
-    width: 46%;
-    font-size: 15px;
-    padding: 10px 10px 0px 10px;
-    text-align: center;
-    transition: 0.15s;
-}
-
-.title-part a{
-    display: block;
-    color:black;
-    text-decoration: none;
-}
-
-.title-part:hover{
-    background-color: rgb(222, 222, 222);
-}
-
-
-.fixed-title{
-    position: fixed;
-    width: 47%;
-    top: 0;
-    padding-top: 10px;
-    z-index: 2;
-    background-color: white;
-    border-bottom: rgb(239, 243, 244) solid 1px;
-}
-
-#settings{
-    margin-left: 73%;
-    display: inline-block;
-    border-radius: 50%;
-    padding: 5px 7px 5px 7px;
-    cursor: pointer;
-    margin-top: 0.5%;
-}
-
-#settings:hover{
-    background-color: rgb(222, 222, 222);
-}
-
-#main-header{
-    display: flex;
-    align-items: center;
-    margin-top: -2%;
-}
-#main-info{
-    display: flex;
-    flex-direction: column;
-}
-.notifications{
-    margin-top:19%;
-    width: 49%;
-    margin-left: 25%;
-    z-index: 1;
-}
-#notifications-title{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    font-size: 31px;
-    font-weight: 800;
-    text-align: left;
-}
-#notifications-text{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    color: rgb(83, 100, 113);
-    text-align: left;
-    font-size: 15px;
+    background-color: rgb(223, 240, 251);
 }
