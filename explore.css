@@ -9,8 +9,42 @@ a:hover{
 
 input{
     outline: none;
-    border: solid;
-    border-color: white;
+    border: none;
+
+}
+
+.input{
+    background-color: rgb(234, 234, 234);
+    border-radius: 20px;
+    padding: 10px 0px 10px 20px;
+    width: 600px;
+    margin-left: 10px;
+}
+
+#option-img{
+    float: right;
+    margin-right: -70px;
+    margin-top: -5px;
+    transition: 0.2s;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+#option-img:hover{
+    background-color: rgb(219, 219, 219);
+}
+
+#search{
+    background-color: rgb(234, 234, 234);
+    border-radius: 20px;
+    padding: 5px 0px 5px 10px;
+}
+
+#main-header{
+    position: sticky;
+    top: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.799)
 }
 
 #menu{
@@ -26,45 +60,110 @@ input{
 
 #main{
     display: inline-block;
-    margin-left: 24%;
+    margin-left: 23%;
     width: 48%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 }
 
-.main_header{
+#page-name{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: -2%;
+    margin-top: 3%; 
+}
+
+#texts{
+    margin-left: 5%;
+}
+
+#newlist{
+    margin-left: 65%;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px 7px 5px 7px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+#more{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px 7px 5px 7px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+#first h2, #second h2, #third h2{
+    font-weight: 800;
+    font-size: 20px;
     margin-left: 2%;
-    font-size: 16px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    margin-top: -3%;
 }
-.main-heaser-user{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    margin-left: 2%;
-    font-size: 13px;
-    color: rgb(83, 100, 113);
-    margin-top: -2.5%;
-}
-.main-center{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    
-}
-.main-center img{
-    margin-left: 29%;
-    margin-top: 5%;
-    height: 168px;
-    width: 336px;
-}
-.main-center h3{
-    font-size: 31px;
-    font-weight: 790;
-    margin-left: 31%;
-    color: rgb(15, 20, 25);
-    line-height: 36px;
-}
-.main-center p{
-    margin-left: 31%;
+
+#first p{
     color: rgb(83, 100, 113);
     font-size: 15px;
-    margin-top: -3%;
+    margin-top: 7%;
+    margin-left: 4%;
+    margin-bottom: 5%;
+}
+
+#first, #second{
+    border: 1px solid rgb(239, 243, 244);
+}
+
+.follower-lists {
+    display: block;
+    font-size: 15px;
+    padding: 10px 5px 10px 10px;
+    transition: 0.15s;
+}
+
+.follower-lists:hover{
+    background-color: rgba(242, 242, 242, 0.954);
+    cursor: pointer;
+}
+
+.follower-lists img{
+    margin-right: 10px;
+}
+
+.gray-lists{
+    color: rgb(100, 99, 99);
+    font-size: 13px;
+}
+
+.black-lists{
+    font-size: 15px;
+}
+
+.user-photo{
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+}
+
+.list-photo{
+    border-radius: 25%;
+    margin-left: 1%;
+}
+
+#back{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px 7px 5px 7px;
+    cursor: pointer;
+    margin-left: -15%;
+    transition: 0.15s;
+}
+
+#back:hover, #newlist:hover, #more:hover{
+    background-color: rgb(222, 222, 222);
+}
+
+#user-name{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    color: rgb(83, 100, 113);
+    font-size: 13px;
 }
 
 #right{
@@ -72,23 +171,10 @@ input{
     float: right;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     width: 24%;
-    margin-right: 15px;
+    margin-right: 45px;
+    /* border-left: rgb(239, 243, 244) solid 1px; */
     padding-left: 30px;
-}
-
-.input{
-    background-color: rgba(242, 242, 242, 0.954);
-    border-radius: 20px;
-    padding: 10px 0px 10px 20px;
-   
-}
-
-#right input{
-    font-size: 15px;
-    border: none;
-    margin-left: 10px;
-    color: rgb(99, 99, 99);
-    background-color: rgba(242, 242, 242, 0.954);
+    position: fixed;
 }
 
 #tweet{
@@ -123,7 +209,8 @@ input{
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.2s;
+    font-weight: 700;
+    transition: 0.15s;
 }
 
 #follow:hover{
@@ -176,7 +263,7 @@ input{
     font-size: 16px;
     margin: 50% 0px 10px 0px;
     padding: 10px 3px;
-    transition: 0.2s;  
+    transition: 0.15s;
 }
 
 .user:hover{
@@ -196,7 +283,6 @@ input{
     margin-top: 20px;
     padding: 1px 0px 15px 0px;
 }
-
 .follower {
     display: block;
     margin-left: 5px;
@@ -276,119 +362,52 @@ input{
     background-color: rgb(223, 240, 251);
 }
 
-.content-main{
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    margin-left: -10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    font-size: 14px;
-}
-
-#main-home{
-    text-align: left;
-    background-color: white;
-    border: rgb(239, 243, 244) solid 1px;
-}
-
-#home{
-    font-size: large;
-    font-weight: bold;
-    margin: 5px 10px 0 10px;
-    padding: 10px 10px 20px 5px;
-}
-
-#tweet-new{
-    display: inline-block;
-    background-color: rgb(0, 172, 238);
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 20px;
-    float: right;
-    width: 12%;
-    height: 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#tweet-new:hover{
-    background-color: rgb(0, 134, 186);
-}
-
-#everyone{
-    /* margin-left: 20px; */
-    display: inline-block;
-    float: left;
-    margin-top: 40px;
-}
-
-#everyone a{
-    border: rgb(191, 191, 191) solid 1px;
-    color: rgb(0, 172, 238);
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 0 15px 2px 10px;
-    font-weight: bold;
-}
-
-#ava{
-    padding: 10px 10px 10px 10px;
-    border-radius: 50%;
-    margin: 30px 0 0 15px;
-}
-
-#home-logos{
-    margin-left: 50px;
-}
-
-.home-logos{
-    height: 3%;
-    width: 3%;
-    padding: 10px 10px 10px 10px;
-    transition: 0.3s;
-    border-radius: 50%;
-}
-
-.home-logos:hover{
-    background-color: rgb(181, 223, 253);
-    border-radius: 50%;
-}
-
-#input-new{
-    margin-left: 70px;
-    margin-bottom: 30px;
-}
-
-.new{
-    height: 10%;
-    width: 98%;
-    background-color: white;
-}
-
-.topic{
-    float: left;
-    padding: 0 5px 5px 10px;
+.user-content{
+    color: rgb(117, 125, 128);
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px 0 0 10px;
     margin: 0;
-}
-
-.bottom-topic{
-    padding-bottom: 15px;
+    float: left;
 }
 
 .topic-user{
-    font-weight: 700;
+    font-size: 13px;
 }
 
-.topic-login{
-    font-weight: 100;
+.second-img{
+    float: right;
+    display: inline-block;
+    border-radius: 15px;
+    height: 80px;
+    width: 100px;
 }
 
-.topic-span{
-    margin-right: 350px;
+#second .topic{
+    padding-left: 15px;
+}
+
+#second .follower-lists{
+    height: 90px;
+    padding: 15px;
+}
+
+.follower-more {
+    font-size: 15px;
+    padding: 10px 5px 10px 10px;
+    transition: 0.15s;
+}
+
+.follower-more:hover{
+    background-color: rgba(242, 242, 242, 0.954);
+    cursor: pointer;
+}
+
+.content{
+    padding: 10px 5px 20px 5px;
+    border: rgb(239, 243, 244) solid 1px;
+    transition: 0.2s;
+    
 }
 
 .content-ava{
@@ -400,11 +419,9 @@ input{
     transition: 0.2s;
 }
 
-.content{
-    padding: 10px 5px 20px 5px;
-    border: rgb(239, 243, 244) solid 1px;
-    transition: 0.2s;
-    
+#ava{
+    padding: 10px 10px 10px 10px;
+    margin: 30px 0 0 15px;
 }
 
 .content-image{
@@ -430,6 +447,24 @@ input{
     border-radius: 50%;
 }
 
+.topic-login{
+    font-weight: 700;
+    float: left;
+    font-size: 16px;
+}
+
+.topic-span{
+    float: left;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.bottom-topic{
+    /* float: left; */
+    padding: 0 5px 5px 10px;
+    margin-left: 70px;
+}
+
 .more-topic{
     float: right;
     display: inline-block;
@@ -438,9 +473,13 @@ input{
 
 .logos{
     margin-left: 80px;
-    /* height: 20%;
-    width: ; */
     display: inline-block;
+}
+
+.topic{
+    color: rgb(117, 125, 128);
+    font-weight: 400;
+    font-size: 13px;
 }
 
 .content-logos:hover{
@@ -456,4 +495,21 @@ input{
 .repost:hover{
     background-color: rgb(174, 251, 195);
     border-radius: 50%;
+}
+
+.follow-this {
+    display: block;
+    font-size: 15px;
+    /* margin: 5px 4px 10px 6px; */
+    padding: 15px 10px;
+    transition: 0.15s;
+}
+
+.follow-this:hover{
+    background-color: rgba(242, 242, 242, 0.954);
+    cursor: pointer;
+}
+
+.follow-this img{
+    margin-right: 10px;
 }
