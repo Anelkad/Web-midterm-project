@@ -193,7 +193,9 @@
                 <?php echo $item['name'];?></a>
                 </b><br><span class="gray">
                 <?php echo '@'.$item['username'].'';?>
-                </span> </div> 
+                </span><br>
+                <?php echo $item['description'];?>
+                </div> 
                 <?php endforeach; ?>
 
                 <h2>Trends for you</h2>
