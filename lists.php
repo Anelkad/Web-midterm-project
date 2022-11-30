@@ -323,8 +323,7 @@
 
         <h3>Who to follow</h3>
 
-        <?php //whotofollow от сюда 
-            foreach($whotofollow as $item): ?>
+        <?php foreach($whotofollow as $item): ?>
             <div class="follower">
             <?php echo '<img src='.$item['img'].'align="left" width="40">';?>
             
@@ -338,26 +337,23 @@
             $isfollowed = $sql->fetch_row();
                 
             $item_id = $item['user_id'];
-                //но надо в ссылках ставить текущую страницу, в этом случае more.php
                 if ((bool)$isfollowed){
-                    echo "<a href=\"more.php?del_following=$item_id\">";
+                    echo "<a href=\"lists.php?del_following=$item_id\">";
                     echo "<button id=\"unfollow-button\">Following</button></a>";
                 }
                 else {
-                    echo "<a href=\"more.php?del_follow=$item_id\">";
+                    echo "<a href=\"lists.php?del_follow=$item_id\">";
                     echo "<button id=\"follow\">Follow</button></a>";
                 }
             
-            $conn->close();
-            //здесь ссылка должна быть userprofile.php ?>
+            $conn->close();?>
             
             <b><a href="userprofile.php?following_id=<?php echo $item['user_id']; ?>">
             <?php echo $item['name']; ?></a>
             </b><br><span class="gray">
             <?php echo '@'.$item['username'].'';?>
             </span> </div> 
-            <?php endforeach; 
-            //до сюда ?>
+            <?php endforeach; ?>
 
             <div class="follower">
                 <span class="show-more">Show more</span>

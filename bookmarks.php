@@ -121,7 +121,7 @@
                 <h3>Bookmarks</h3>
             </div>
             <div class="main-heaser-user">
-                <span>@User49491</span>
+                <span>@<?php echo $myuser[0]['username'];?></span>
             </div>
             <div class="main-center">
                 <img src="https://abs.twimg.com/sticky/illustrations/empty-states/book-in-bird-cage-800x400.v1.png">
