@@ -1,7 +1,7 @@
 The Twitter
 
 CEO:
-    Kadyriva  Anel	
+    Kadyrova  Anel	
 	Nagymetkyzy Manshuk	
 	Bokeikhan  Kazybek
 	
