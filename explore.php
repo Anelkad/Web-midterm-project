@@ -1,3 +1,88 @@
+<?php	
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "test";
+            
+            $trends = array();
+            $i = 0;
+            $whotofollow = array();
+            $j = 0;
+
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
+           
+            if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+            }
+
+            if(isset($_GET['del_follow'])){
+                $id = $_GET['del_follow'];
+                //mysqli_query($conn, "DELETE FROM whotofollow WHERE user_id='$id'");
+                mysqli_query($conn, "UPDATE usersprofile SET following_number = following_number +1 WHERE id=1");
+                mysqli_query($conn, "INSERT INTO following (user_id) VALUES ('$id')");
+                header('location: explore.php');
+            }
+
+            if(isset($_GET['del_following'])){
+                $id = $_GET['del_following'];
+                mysqli_query($conn, "DELETE FROM following WHERE user_id='$id'");
+                mysqli_query($conn, "UPDATE usersprofile SET following_number = following_number -1 WHERE id=1");
+                //mysqli_query($conn, "INSERT INTO whotofollow (user_id) VALUES ('$id')");
+                header('location: explore.php');
+            }
+
+            $sql = mysqli_query($conn, 'SELECT `title`, `subtitle`,`tweets` FROM `trends`');
+            while ($row = mysqli_fetch_array($sql))
+                {
+                    $trends[$i]['title'] = $row['title'];
+                    $trends[$i]['subtitle'] = $row['subtitle'];
+                    $trends[$i]['tweets'] = $row['tweets'];
+                    $i++;
+                }
+            
+                try { 
+                    $sql1 = "SELECT usersprofile.full_name as name, 
+                    usersprofile.id as user_id,
+                    usersprofile.img as img, 
+                    usersprofile.username as username,
+                    usersprofile.description as description
+                    FROM usersprofile
+                    INNER JOIN whotofollow
+                    ON usersprofile.id = whotofollow.user_id";
+                   $result = mysqli_query($conn, $sql1); 
+                } catch (mysqli_sql_exception $e) { 
+                   var_dump($e);
+                   exit; 
+                } 
+    
+                while ($row = mysqli_fetch_array($result)) {
+                        $whotofollow[$j]['user_id'] = $row['user_id'];
+                        $whotofollow[$j]['description'] = $row['description'];
+                        $whotofollow[$j]['name'] = $row['name'];
+                        $whotofollow[$j]['img'] = $row['img'];
+                        $whotofollow[$j]['username'] = $row['username'];
+                        $j++;
+                        if ($j==5) break;
+                     }
+
+                $myuser = array();
+
+            $sql2 = mysqli_query($conn, "SELECT full_name, username,img,joined_date,followers_number,following_number,tweets_number FROM usersprofile WHERE id= 1");
+            while ($row = mysqli_fetch_array($sql2))
+                {
+                    $myuser[0]['full_name'] = $row['full_name'];
+                    $myuser[0]['username'] = $row['username'];
+                    $myuser[0]['img'] = $row['img'];
+                    $myuser[0]['joined_date'] = $row['joined_date'];
+                    $myuser[0]['followers_number'] = $row['followers_number'];
+                    $myuser[0]['following_number'] = $row['following_number'];
+                    $myuser[0]['tweets_number'] = $row['tweets_number'];
+                }
+
+                
+
+            $conn->close();
+            ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,10 +108,10 @@
             <button id="tweet">Tweet</button>
 
             <div class="user">
-                    <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" align="left" width="30">
+                    <?php echo '<img src='.$myuser[0]['img'].' align="left" width="30">';?>
                     <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png" align="right" width="20">
-                    <b>User</b>
-                    <br><span class="gray">@User49491</span>
+                    <b><?php echo $myuser[0]['full_name'];?></b>
+                    <br><span class="gray">@<?php echo $myuser[0]['username'];?></span>
                    
                </div>
         </div>
@@ -38,46 +123,17 @@
 
             <div id="first">
                 <h2>Trends for you</h2>
-                <div class="follower-lists">
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <b class="topic">Trending in Pop</b><br>
-                    <b class="black-lists">rusborder</b><br>
-                    <span class="gray-lists">11.7K Tweets</span>
-                </div>
-    
-                <div class="follower-lists">
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <b class="topic">Trending in Pop</b><br>
-                    <b class="black-lists">Phil Rab</b><br>
-                    <span class="gray-lists">11.8K Tweets</span>
-                </div>
-    
-                <div class="follower-lists">
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <b class="topic">Music · Trending</b><br>
-                    <b class="black-lists">#FlyAway</b><br>
-                    <span class="gray-lists">79.3K Tweets</span>
-                </div>
 
-                <div class="follower-lists">
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <b class="topic">Trending in Kazakhstan</b><br>
-                    <b class="black-lists">Halloween</b><br>
-                    <span class="gray-lists">504K Tweets</span>
-                </div>
-
-                <div class="follower-lists">
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <b class="topic">Trending in Kazakhstan</b><br>
-                    <b class="black-lists">Казахстана</b><br>
-                </div>
-
-                <div class="follower-lists">
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <b class="topic">Trending in Kazakhstan</b><br>
-                    <b class="black-lists">Ладно</b><br>
-                    <span class="gray-lists">5,347 Tweets</span>
-                </div>
+            <?php foreach($trends as $item): ?>
+            <div class="follower-lists">
+            <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
+            <b class="topic"><?php echo $item['subtitle'];?></b><br>
+                    <b class="black-lists"><?php echo $item['title'];?></b><br>
+                    <span class="gray-lists">
+                    <?php  if ($item['tweets']>0){echo ''.$item['tweets'].'  Tweets';}?>
+                    </span>   
+            </div>
+            <?php endforeach; ?>
 
                 <div class="follower-more">
                     <span class="show-more">Show more</span>
@@ -234,88 +290,43 @@
             </div>
         </div>
 
-        <!-- <div id="right">
-            <div class="input"><img src="https://cdn-icons-png.flaticon.com/512/126/126474.png" width="15px"><input type="text" placeholder="Search Twitter"></div>
-       
-            <div class="trends">
-            <h3>Trends for you</h3>
-            <div class="trends-item">
-                    <span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>Казахстане</b>
-            </div>
-
-            <div class="trends-item">
-                <span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>Скоро</b><br>
-                    <span class="gray">6,790 Tweets</span>
-            </div>
-
-            <div class="trends-item">
-                <span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>Алматы</b>
-            </div>
-
-            <div class="trends-item">
-                <span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>Поздравляю</b><br>
-                    <span class="gray">2,735 Tweets</span>
-                </div>
-
-            <div class="trends-item">
-                <p><span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>#Astana</b><br>
-                    <span class="gray">1,758 Tweets</span>
-              </div>
-
-            <div class="trends-item">
-                <span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>Пусть</b><br>
-                    <span class="gray">5,142 Tweets</span>
-              </div>
-
-            <div class="trends-item">
-                <span class="gray">Trending in Kazakhstan</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png">
-                    <br> <b>Кстати</b><br>
-                    <span class="gray">5,831 Tweets</span>
-             </div>
-
-            <div class="trends-item">
-                <span class="show-more">Show more</span>
-            </div>
-        </div> -->
 
     <div id="right">
         <div class="follow">
 
             <h3>Who to follow</h3>
 
-                <div class="follower">
-                    <img src="https://pbs.twimg.com/profile_images/1082744382585856001/rH_k3PtQ_400x400.jpg" align="left" width="40">
-                    <button id="follow">Follow</button>
-                    <b>SpaceX</b>
-                    <br><span class="gray">@SpaceX</span>
-                </div>
+            <?php foreach($whotofollow as $item): ?>
+            <div class="follower">
+            <?php echo '<img src='.$item['img'].'align="left" width="40">';?>
+            
+            <?php 
 
-                <div class="follower">
-                    <img src="https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg" align="left" width="40">
-                    <button id="follow">Follow</button>
-                    <b>Twitter</b>
-                    <br><span class="gray">@Twitter</span>
-                </div>
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-                <div class="follower">
-                    <img src="https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_400x400.jpg" align="left" width="40">
-                    <button id="follow">Follow</button>
-                    <b>NASA</b>
-                    <br><span class="gray">@NASA</span>
-                </div>
+            $follow_id = $item['user_id'];
+
+            $sql = mysqli_query($conn, "SELECT id FROM following WHERE user_id=$follow_id");
+            $isfollowed = $sql->fetch_row();
+                
+            $item_id = $item['user_id'];
+                if ((bool)$isfollowed){
+                    echo "<a href=\"explore.php?del_following=$item_id\">";
+                    echo "<button id=\"unfollow-button\">Following</button></a>";
+                }
+                else {
+                    echo "<a href=\"explore.php?del_follow=$item_id\">";
+                    echo "<button id=\"follow\">Follow</button></a>";
+                }
+            
+            $conn->close();?>
+            
+            <b><a href="userprofile.php?following_id=<?php echo $item['user_id']; ?>">
+            <?php echo $item['name']; ?></a>
+            </b><br><span class="gray">
+            <?php echo '@'.$item['username'].'';?>
+            </span> </div> 
+            <?php endforeach;?>
 
                 <div class="follower">
                     <span class="show-more">Show more</span>
