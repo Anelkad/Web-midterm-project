@@ -80,8 +80,65 @@
 
 #follow:hover{
     background-color: rgb(31, 31, 31);
+    transition: 0.2s;
 }
 
+#unfollow{
+    background-color: rgb(255, 255, 255);
+    float: right;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    margin: 5px 25px;
+    border: rgb(222, 222, 222) 1.5px solid;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#unfollow:hover{
+    background-color: rgb(255, 185, 185);
+    transition: 0.2s;
+}
+
+#unfollow a{
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#unfollow-button{
+    background-color: rgb(255, 255, 255);
+    float: right;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    width: 80px;
+    height: 30px;
+    margin: 5px 10px;
+    border: rgb(222, 222, 222) 1.5px solid;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#unfollow-button:hover{
+    background-color: rgb(255, 185, 185);
+    transition: 0.2s;
+}
+
+#unfollow-button a{
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#follow a{
+    color: white;
+    text-decoration: none;
+}
 
 
 .trends {
@@ -168,9 +225,16 @@
     transition: 0.15s;
 }
 
-.follower-item b:hover{
+
+.follower-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.follower-item a:hover{
     text-decoration: underline;
 }
+
 
 .follower-item:hover{
     background-color: rgb(238, 238, 238);
@@ -201,6 +265,15 @@
     border-radius: 50%;
     margin-right: 10px;
     margin-left: 5px;
+}
+
+.follower a{
+    text-decoration: none;
+    color: black;
+}
+
+.follower a:hover{
+    text-decoration: underline;
 }
 
 .gray{
@@ -273,7 +346,7 @@
 
 .fixed-title{
     position: fixed;
-    margin-left: -1.5%;
+    margin-left: -1.3%;
     width: 48.48%;
     top: 0;
     z-index: 2;
@@ -313,9 +386,9 @@
 }
 
 #avatar{
-    width: 100px;
+    width: 120px;
     border-radius: 100px;
-    padding: 20px 20px;
+    padding: 10px 10px;
     margin-top: -13%;
     margin-left: 5%;
     background-color: white;
@@ -350,6 +423,21 @@
 
 
 .topic-part:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+.follow-part{
+    display: inline-block;
+    width: 46%;
+    font-size: 15px;
+    padding: 10px 10px 0px 10px;
+    margin-left: 0;
+    text-align: center;
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+.follow-part:hover{
     background-color: rgb(238, 238, 238);
 }
 
@@ -413,6 +501,48 @@
 
 .topics-item:hover{
     background-color: rgb(222, 222, 222);
+}
+
+.profile-button{
+    float: right;
+    padding: 5px 8px;
+    color: black;
+    height: 20px;
+    margin: 10px 5px;
+    border:rgb(200, 200, 200) solid 1px;
+    border-radius: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.profile-button:hover{
+    background-color: rgb(222, 222, 222);
+}
+
+#antifollow{
+    float: right;
+    padding: 6px 12px;
+    color: white;
+    background-color: black;
+    height: 20px;
+    margin: 10px 5px;
+    border:none;
+    border-radius: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+#antifollow:hover{
+    background-color: rgb(31, 31, 31);
+    transition: 0.2s;
 }
 
 #more-topics{

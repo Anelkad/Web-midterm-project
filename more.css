@@ -68,6 +68,7 @@
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     font-size: 14px;
+    font-weight: 600;
     width: 70px;
     height: 30px;
     margin-top: 5px;
@@ -81,6 +82,43 @@
 #follow:hover{
     background-color: rgb(31, 31, 31);
 }
+
+#follow a{
+    color: white;
+    text-decoration: none;
+}
+
+#notinterested{
+    padding-top: 10px;
+}
+
+#unfollow{
+    background-color: rgb(255, 255, 255);
+    float: right;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100px;
+    height: 30px;
+    margin: 5px 25px;
+    border: rgb(222, 222, 222) 1.5px solid;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#unfollow:hover{
+    background-color: rgb(255, 185, 185);
+    transition: 0.2s;
+}
+
+#unfollow a{
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
 
 .trends {
     background-color: rgba(242, 242, 242, 0.954);
@@ -171,6 +209,43 @@
     margin-right: 10px;
     margin-left: 5px;
 }
+
+/* дополнения отсюда */
+.follower a{
+    text-decoration: none;
+    color: black;
+}
+
+.follower a:hover{
+    text-decoration: underline;
+} 
+
+#unfollow-button{
+    background-color: rgb(255, 255, 255);
+    float: right;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    width: 80px;
+    height: 30px;
+    margin: 5px 10px;
+    border: rgb(222, 222, 222) 1.5px solid;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#unfollow-button:hover{
+    background-color: rgb(255, 185, 185);
+    transition: 0.2s;
+}
+
+#unfollow-button a{
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+/* до сюда */
 
 .gray{
     color: rgb(100, 99, 99);
@@ -367,6 +442,31 @@
 
 .topics-item:hover{
     background-color: rgb(223, 240, 251);
+}
+
+.follower-item {
+    display: block;
+    margin-left: 5px;
+    font-size: 15px;
+    margin: 5px 0px 10px 0px;
+    padding: 10px 3px;
+    transition: 0.15s;
+}
+
+
+.follower-item b:hover{
+    text-decoration: underline;
+}
+
+.follower-item:hover{
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+.follower-item img{
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 5px;
 }
 
 #more-topics{
