@@ -7,7 +7,8 @@
             $trends = array();
             $i = 0;
             $whotofollow = array();
-            $j = 0;
+
+            $searching = array();
 
             $conn = mysqli_connect($servername, $username, $password, $dbname);
            
@@ -31,6 +32,35 @@
                 header('location: explore.php');
             }
 
+            session_start();
+
+            if (isset($_POST['search'])){
+                $_SESSION['search']=$_POST['search'];}
+            
+            if (isset($_SESSION['search'])){
+                $search = $_SESSION['search'];
+                
+                try { 
+                    $sql1 = "SELECT full_name, id, img, username, description FROM usersprofile 
+                    WHERE full_name LIKE '%$search%' OR description LIKE '%$search%'";
+                   $result = mysqli_query($conn, $sql1); 
+                } catch (mysqli_sql_exception $e) { 
+                   var_dump($e);
+                   exit; 
+                } 
+
+                $i = 0;
+    
+                while ($row = mysqli_fetch_array($result)) {
+                    $searching[$i]['user_id'] = $row['id'];
+                    $searching[$i]['description'] = $row['description'];
+                    $searching[$i]['name'] = $row['full_name'];
+                    $searching[$i]['img'] = $row['img'];
+                    $searching[$i]['username'] = $row['username'];
+                    $i++;
+                     }
+            }
+
             $sql = mysqli_query($conn, 'SELECT `title`, `subtitle`,`tweets` FROM `trends`');
             while ($row = mysqli_fetch_array($sql))
                 {
@@ -41,7 +71,7 @@
                 }
             
                 try { 
-                    $sql1 = "SELECT usersprofile.full_name as name, 
+                    $sql = "SELECT usersprofile.full_name as name, 
                     usersprofile.id as user_id,
                     usersprofile.img as img, 
                     usersprofile.username as username,
@@ -49,12 +79,14 @@
                     FROM usersprofile
                     INNER JOIN whotofollow
                     ON usersprofile.id = whotofollow.user_id";
-                   $result = mysqli_query($conn, $sql1); 
+                   $result = mysqli_query($conn, $sql); 
                 } catch (mysqli_sql_exception $e) { 
                    var_dump($e);
                    exit; 
                 } 
-    
+                
+                $j = 0;
+
                 while ($row = mysqli_fetch_array($result)) {
                         $whotofollow[$j]['user_id'] = $row['user_id'];
                         $whotofollow[$j]['description'] = $row['description'];
@@ -83,6 +115,7 @@
 
             $conn->close();
             ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -118,10 +151,51 @@
 
         <div id="main">
             <div id="main-header">
-                <div class="input"><img src="https://cdn-icons-png.flaticon.com/512/126/126474.png" width="15px"><input type="text" placeholder="Search Twitter" id="search"><img id="option-img" src="https://cdn-icons-png.flaticon.com/512/2099/2099058.png" width="20px"></div>
+                <form class="input" method="post">
+                <button type="submit">  
+                    <img src="https://cdn-icons-png.flaticon.com/512/126/126474.png" width="15px">
+                </button>
+                    <input type="text" placeholder="Search Twitter" id="search" name="search">
+                    <img id="option-img" src="https://cdn-icons-png.flaticon.com/512/2099/2099058.png" width="20px">
+            </form>
             </div>
 
             <div id="first">
+
+                <?php foreach($searching as $item): ?>
+                <div class="follower">
+                <?php echo '<img src='.$item['img'].'align="left" width="40">';?>
+
+                <?php 
+
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                $follow_id = $item['user_id'];
+
+                $sql = mysqli_query($conn, "SELECT id FROM following WHERE user_id=$follow_id");
+                $isfollowed = $sql->fetch_row();
+                    
+                $item_id = $item['user_id'];
+
+                    if ((bool)$isfollowed){
+                        echo "<a href=\"explore.php?del_following=$item_id\">";
+                        echo "<button id=\"unfollow-button\">Following</button></a>";
+                    }
+                    else {
+                        echo "<a href=\"explore.php?del_follow=$item_id\">";
+                        echo "<button id=\"follow\">Follow</button></a>";
+                    }
+                
+                $conn->close();
+                ?>
+
+                <b><a href="userprofile.php?following_id=<?php echo $item['user_id']; ?>">
+                <?php echo $item['name'];?></a>
+                </b><br><span class="gray">
+                <?php echo '@'.$item['username'].'';?>
+                </span> </div> 
+                <?php endforeach; ?>
+
                 <h2>Trends for you</h2>
 
             <?php foreach($trends as $item): ?>
