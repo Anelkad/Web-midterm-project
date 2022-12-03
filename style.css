@@ -384,7 +384,7 @@ input{
     height: 3%;
     width: 3%;
     padding: 10px 10px 10px 10px;
-    transition: 0.3s;
+    transition: 0.18s;
     border-radius: 50%;
 }
 
@@ -402,28 +402,6 @@ input{
     height: 10%;
     width: 98%;
     background-color: white;
-}
-
-.topic{
-    float: left;
-    padding: 0 5px 5px 10px;
-    margin: 0;
-}
-
-.bottom-topic{
-    padding-bottom: 15px;
-}
-
-.topic-user{
-    font-weight: 700;
-}
-
-.topic-login{
-    font-weight: 100;
-}
-
-.topic-span{
-    margin-right: 350px;
 }
 
 .content-ava{
@@ -459,22 +437,18 @@ input{
 .content-logos{
     height: 3%;
     width: 3%;
-    padding: 10px 10px 10px 10px;
-    margin: 0 45px 0 45px;
-    transition: 0.3s;
+    padding: 8px;
+    margin: 0 75px 0 45px;
+    transition: 0.18s;
     border-radius: 50%;
 }
 
-.more-topic{
-    float: right;
-    display: inline-block;
-    margin: 0 10px 0 20px;
+.numbers{
+    margin-left: -70px;
 }
 
 .logos{
     margin-left: 80px;
-    /* height: 20%;
-    width: ; */
     display: inline-block;
 }
 
@@ -491,4 +465,34 @@ input{
 .repost:hover{
     background-color: rgb(174, 251, 195);
     border-radius: 50%;
+}
+
+
+
+/* content title */
+.more-topic{
+    float: right;
+    margin: 0 10px 0 20px;
+}
+
+.topic{
+    padding: 0;
+    width: 540px;
+    margin-left: 80px;
+}
+
+.bottom-topic{
+    width: 85%;
+    height: 100%;
+    margin: 5px 10px 10px 80px;
+}
+
+.topic-user{
+    font-weight: 700;
+    width: 100%;
+}
+
+.topic-login{
+    font-weight: 100;
+    width: 100%;
 }

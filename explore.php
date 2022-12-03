@@ -39,6 +39,7 @@
             
             if (isset($_SESSION['search'])){
                 $search = $_SESSION['search'];
+                if ($search!=""){
                 
                 try { 
                     $sql1 = "SELECT full_name, id, img, username, description FROM usersprofile 
@@ -60,6 +61,7 @@
                     $i++;
                      }
             }
+        }
 
             $sql = mysqli_query($conn, 'SELECT `title`, `subtitle`,`tweets` FROM `trends`');
             while ($row = mysqli_fetch_array($sql))
@@ -152,7 +154,7 @@
         <div id="main">
             <div id="main-header">
                 <form class="input" method="post">
-                <button type="submit">  
+                <button type="submit" class="search-submit">  
                     <img src="https://cdn-icons-png.flaticon.com/512/126/126474.png" width="15px">
                 </button>
                     <input type="text" placeholder="Search Twitter" id="search" name="search">
@@ -193,9 +195,7 @@
                 <?php echo $item['name'];?></a>
                 </b><br><span class="gray">
                 <?php echo '@'.$item['username'].'';?>
-                </span><br>
-                <?php echo $item['description'];?>
-                </div> 
+                </span> </div> 
                 <?php endforeach; ?>
 
                 <h2>Trends for you</h2>
@@ -210,55 +210,6 @@
                     </span>   
             </div>
             <?php endforeach; ?>
-
-                <div class="follower-more">
-                    <span class="show-more">Show more</span>
-                </div>
-            </div>
-
-            <div id="second">
-                <h2>What’s happening</h2>
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/tweet_video_thumb/FfRsGtOXwAIvV7_?format=jpg&name=240x240">
-                    <b class="topic-user">Financial Times</b><b class="topic">Yesterday</b><br>
-                    <b class="black-lists">How Xi Jinping became China’s unrivalled leader</b><br>
-                </div>
-    
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/semantic_core_img/1571150918896295936/7PQxWLgh?format=jpg&name=240x240">
-                    <b class="topic-user">Entertaiment</b><b class="topic">LIVE</b><br>
-                    <b class="black-lists">It's Freida Pinto's birthday 🎂</b><br>
-                </div>
-    
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/media/FfM-a4LXwAAEa8P?format=jpg&name=240x240">
-                    <b class="topic-user">Toronto Star</b><b class="topic">October 16, 2022</b><br>
-                    <b class="black-lists">James Webb telescope pictures didn’t begin as stunning images. Here’s how they started out — and how researchers brought them to life</b><br>
-                </div>
-
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/semantic_core_img/1579454614277181440/b-ZGeQ4X?format=jpg&name=240x240">
-                    <b class="topic-user">War in Ukraine</b><b class="topic">LIVE</b><br>
-                    <b class="black-lists">Latest updates on the war in Ukraine</b><br>
-                </div>
-
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/semantic_core_img/1582022079561482240/1pwQMWgw?format=jpg&name=240x240">
-                    <b class="topic-user">Animals</b><b class="topic">Yesterday</b><br>
-                    <b class="black-lists">A 2007 video of a frilled shark has been miscaptioned, fact-checkers report</b><br>
-                </div>
-
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/media/FfTFAvTVsAA35gW?format=jpg&name=240x240">
-                    <b class="topic-user">Bloomberg Crypto</b><b class="topic">Last night</b><br>
-                    <b class="black-lists">US regulators probe bankrupt crypto hedge fund Three Arrows Capital</b><br>
-                </div>
-
-                <div class="follower-lists">
-                    <img class="second-img" alt="img" src="https://pbs.twimg.com/semantic_core_img/1563222339365482498/iC-35hQM?format=jpg&name=240x240">
-                    <b class="topic-user">US elections</b><b class="topic">LIVE</b><br>
-                    <b class="black-lists">Learn how your state's voting laws may have changed</b><br>
-                </div>
 
                 <div class="follower-more">
                     <span class="show-more">Show more</span>

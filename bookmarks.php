@@ -30,6 +30,14 @@
                 //mysqli_query($conn, "INSERT INTO whotofollow (user_id) VALUES ('$id')");
                 header('location: bookmarks.php');
             }
+
+            if(isset($_GET['bookmark'])){
+                $id = $_GET['bookmark'];
+                //mysqli_query($conn, "DELETE FROM following WHERE user_id='$id'");
+                //mysqli_query($conn, "UPDATE usersprofile SET following_number = following_number -1 WHERE id=1");
+                mysqli_query($conn, "INSERT INTO bookmarks (post_id) VALUES ('$id')");
+                header('location: bookmarks.php');
+            }
             
             $sql = mysqli_query($conn, 'SELECT `title`, `subtitle`,`tweets` FROM `trends`');
             while ($row = mysqli_fetch_array($sql))
@@ -86,6 +94,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="bookmarks.css">
+        
         <link rel="icon" href="https://pngimg.com/uploads/twitter/small/twitter_PNG3.png">
         <title>Twitter</title>
     </head>
@@ -123,11 +132,48 @@
             <div class="main-heaser-user">
                 <span>@<?php echo $myuser[0]['username'];?></span>
             </div>
-            <div class="main-center">
-                <img src="https://abs.twimg.com/sticky/illustrations/empty-states/book-in-bird-cage-800x400.v1.png">
-                <h3>Save Tweets for later</h3>
-                <p>Don’t let the good ones fly away! Bookmark <br>Tweets to easily find them again in the future.</p>
+            <div>
+
+            <?php
+                $conn = new PDO("mysql:host=localhost;dbname=test", "root", "");
+
+                $info = [];
+
+                if($query = $conn->query(" SELECT * FROM postslist
+                INNER JOIN usersprofile ON postslist.user_id = usersprofile.id
+                INNER JOIN bookmarks ON bookmarks.post_id = postslist.id")){
+                    $info = $query->fetchAll(PDO::FETCH_ASSOC);
+                }else{
+                    print_r($conn->errorInfo());
+                }
+            
+                foreach($info as $data): ?>
+                <div class="content">
+                    <div class="ava"><img class="content-ava" src=<?= $data['img']?> onerror="this.style.visibility='hidden'" alt=" "></div>
+                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
+                    <div class="topic"><a href="userprofile.php?following_id=<?php echo $data['user_id']; ?>"><span class="topic-user"><?= $data['full_name']?> </span></a>
+                    <span class="topic-login"> @<?= $data['username']?> ▪ <?= $data['posted_date']?></span></div>
+                    <p class="topic bottom-topic"><?= $data['title']?></p>
+                    <div>
+                        <img class="content-image" src="<?= $data['image_url']?>" onerror="this.style.visibility='hidden'" alt=" ">
+                    </div>
+                    <div class="logos">
+                        <img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
+                        <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png"><span class="numbers"></span><?php echo $data['retweets_number']; ?></span>
+                        <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png"><span class="numbers"><?php echo $data['likes_number']; ?></span>
+                        <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png">
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+                <?php 
+                if (count($info)==0){
+                    echo '<div class="main-center"><img src="https://abs.twimg.com/sticky/illustrations/empty-states/book-in-bird-cage-800x400.v1.png"> <h3>Save Tweets for later</h3><p>Don’t let the good ones fly away! Bookmark <br>Tweets to easily find them again in the future.</div></p>';
+                }
+                ?>
+                
             </div>
+
         </div>
 
         <div id="right">

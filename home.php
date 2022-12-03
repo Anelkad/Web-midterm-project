@@ -112,7 +112,6 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/2311/2311523.png" align="right" width="20">
                     <b><?php echo $myuser[0]['full_name'];?></b>
                     <br><span class="gray">@<?php echo $myuser[0]['username'];?></span>
-                   
                </div>
         </div>
 
@@ -132,76 +131,37 @@
                         <button id="tweet-new">Tweet</button>
                     </div>
                 </div>
+            <?php
+                $conn = new PDO("mysql:host=localhost;dbname=test", "root", "");
 
-                <div class="content">
-                    <div class="ava"><img class="content-ava" alt="img" src="https://pbs.twimg.com/profile_images/1553522673409576960/sewydVLi_400x400.jpg"></div>
-                    <p class="topic"><a href=""><span class="topic-user">Marvel Updates </span></a><span class="topic-span topic-login"> @marvel_updat3s</span></br></p>
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <p class="topic bottom-topic">Scarlett Johansson is the executive producer of #Thunderbolts #MarvelStudios</p>
-                    <div><img class="content-image" alt="image" src="https://pbs.twimg.com/media/FfWbfnzXwAArLJc?format=jpg&name=small"></div>
-                    <div class="logos"><img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
-                    <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png">
-                    <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png">
-                    <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></div>
-                </div>
+                $info = [];
 
+                if($query = $conn->query(" SELECT * FROM postslist
+                INNER JOIN usersprofile ON postslist.user_id = usersprofile.id")){
+                    $info = $query->fetchAll(PDO::FETCH_ASSOC);
+                }else{
+                    print_r($conn->errorInfo());
+                }
+            
+                foreach($info as $data): ?>
                 <div class="content">
-                    <div class="ava"><img class="content-ava" alt="img" src="https://pbs.twimg.com/profile_images/965775897193275398/LLrUTVUs_400x400.jpg"></div>
-                    <p class="topic"><a href=""><span class="topic-user">Programmer humor </span></a><span class="topic-span topic-login"> @Phumor</span></br></p>
+                    <div class="ava"><img class="content-ava" src=<?= $data['img']?> onerror="this.style.visibility='hidden'" alt=" "></div>
                     <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <p class="topic bottom-topic">Programmer humor</p>
-                    <div><img class="content-image" alt="image" src="https://pbs.twimg.com/media/FfAvgDfVsAA5ewq?format=jpg&name=small"></div>
-                    <div class="logos"><img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
-                    <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png">
-                    <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png">
-                    <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></div>
+                    <div class="topic"><a href="userprofile.php?following_id=<?php echo $data['user_id']; ?>"><span class="topic-user"><?= $data['full_name']?> </span></a>
+                    <span class="topic-login"> @<?= $data['username']?> ▪ <?= $data['posted_date']?></span></div>
+                    <p class="topic bottom-topic"><?= $data['title']?></p>
+                    <div>
+                        <img class="content-image" src="<?= $data['image_url']?>" onerror="this.style.visibility='hidden'" alt=" ">
+                    </div>
+                    <div class="logos">
+                        <img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
+                        <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png"><span class="numbers"></span><?php echo $data['retweets_number']; ?></span>
+                        <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png"><span class="numbers"><?php echo $data['likes_number']; ?></span>
+                        <a href="bookmarks.php?bookmark=<?php echo $data['topic_id']; ?>"><img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></a>
+                    </div>
                 </div>
+            <?php endforeach; ?>
 
-                <div class="content">
-                    <div class="ava"><img class="content-ava" alt="img" src="https://pbs.twimg.com/profile_images/1553721706094682112/TQu0xewn_400x400.jpg"></div>
-                    <p class="topic"><a href=""><span class="topic-user">Attack On Titan </span></a><span class="topic-span topic-login"> @AoTJewels</span></br></p>
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <p class="topic bottom-topic">Your last saved anime image is what they’re looking at</p>
-                    <div><img class="content-image" alt="image" src="https://pbs.twimg.com/media/FfHOjRjXwAAvhjr?format=jpg&name=small"></div>
-                    <div class="logos"><img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
-                    <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png">
-                    <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png">
-                    <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></div>
-                </div>
-
-                <div class="content">
-                    <div class="ava"><img class="content-ava" alt="img" src="https://pbs.twimg.com/profile_images/1580543729307451394/5syTOolK_400x400.jpg"></div>
-                    <p class="topic"><a href=""><span class="topic-user">jk.97</span></a><span class="topic-span topic-login"> @jeonIves</span></br></p>
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <p class="topic bottom-topic">almost 11M on weverse.. im praying for this app at this point</p>
-                    <div class="logos"><img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
-                    <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png">
-                    <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png">
-                    <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></div>
-                </div>
-
-                <div class="content">
-                    <div class="ava"><img class="content-ava" alt="img" src="https://pbs.twimg.com/profile_images/1342086006149791750/Ar0drcXS_400x400.jpg"></div>
-                    <p class="topic"><a href=""><span class="topic-user">chart data</span></a><span class="topic-span topic-login"> @chartdata</span></br></p>
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <p class="topic bottom-topic">518 albums were submitted for Album of the Year consideration at next year's #GRAMMYs</p>
-                    <div class="logos"><img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
-                    <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png">
-                    <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png">
-                    <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></div>
-                </div>
-                
-                <div class="content">
-                    <div class="ava"><img class="content-ava" alt="img" src="https://pbs.twimg.com/profile_images/1477617077766828039/AOjJSjDW_400x400.jpg"></div>
-                    <p class="topic"><a href=""><span class="topic-user">Andreas Kling </span></a><span class="topic-span topic-login"> @awesomeking</span></br></p>
-                    <img class="content-logos more-topic" alt="more" src="https://img.icons8.com/ios-glyphs/344/more.png">
-                    <p class="topic bottom-topic">Looking at this file from WebKit may change how you think about web browsers</p>
-                    <div><img class="content-image" alt="image" src="https://pbs.twimg.com/media/FfDRHTQWIAAeX21?format=jpg&name=small"></div>
-                    <div class="logos"><img class="content-logos" alt="comment" src="https://img.icons8.com/ios/344/speech-bubble--v1.png">
-                    <img class="content-logos repost" alt="repost" src="https://img.icons8.com/material-outlined/344/retweet.png">
-                    <img class="content-logos like" alt="like" src="https://cdn-icons-png.flaticon.com/512/8182/8182897.png">
-                    <img class="content-logos" alt="repost" src="https://img.icons8.com/ios-glyphs/344/share-rounded.png"></div>
-                </div>
             </div>
             <script src="script.js"></script>
         </div>
