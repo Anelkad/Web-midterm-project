@@ -1,7 +1,7 @@
-The Twitter
+- Endterm group project of Web programming course
+- Twitter web site using PHP
 
-CEO:
-    Kadyrova  Anel	
-	Nagymetkyzy Manshuk	
-	Bokeikhan  Kazybek
+    - Kadyrova Anel	
+    - Nagymetkyzy Manshuk 
+    - Bokeikhan Kazybek
 	
